@@ -16,12 +16,11 @@ function App() {
         <Typography type={'rtf'} size={'p'} weight={'regular'}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Sed do eiusmod tempor <a>incididunt ut labore et dolore magna aliqua</a>.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Ut enim ad minim veniam, quis nostrud <s>exercitation</s> ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </Typography>
         <Typography type={'rtf'} size={'p'} weight={'regular'}>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing.
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <b>Ut enim ad minim</b> veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing. <u>Sed do eiusmod</u> tempor incididunt ut labore et dolore magna aliqua.
         </Typography>
 
         <Typography type={'rtf'} size={'h3'} weight={'semibold'}>
@@ -68,7 +67,7 @@ function App() {
         <Typography type={'rtf'} size={'h6'} weight={'semibold'}>
           Kaiselius el Tincidunt Vulputate
         </Typography>
-        <Typography type={'rtf'} size={'p'} weight={'regular'}>
+        <Typography type={'rtf'} size={'p'} weight={'regular'} italic>
           Imperdiet, quam aliquam, sit amet mattis.
           Duis velit, euismod in, tristique et, tempus sit amet, sem.
           Sit amet, sem. Sit amet, sem. Sit amet, sem.

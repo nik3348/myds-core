@@ -1,10 +1,10 @@
 import './fonts.css'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-type TypographyTypes = 'heading' | 'body';
-type TypographyWeight = 'regular' | 'medium' | 'semibold';
-type TypographySize = 'xl' | 'l' | 'm' | 's' | 'xs';
-type TypographyRTFSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+type TypographyTypes = 'heading' | 'body'
+type TypographyWeight = 'regular' | 'medium' | 'semibold'
+type TypographySize = 'xl' | 'l' | 'm' | 's' | 'xs'
+type TypographyRTFSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
 
 interface HeadingBodyProps {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ interface RTFProps {
   as?: TypographyRTFSize;
 }
 
-type TypographyProps = HeadingBodyProps | RTFProps;
+type TypographyProps = HeadingBodyProps | RTFProps
 
 const sizeMap: Record<TypographyTypes, Record<TypographySize, { fontSize: string; lineHeight: string }>> = {
   heading: {
@@ -41,13 +41,13 @@ const sizeMap: Record<TypographyTypes, Record<TypographySize, { fontSize: string
     s: { fontSize: '14px', lineHeight: '20px' },
     xs: { fontSize: '12px', lineHeight: '18px' },
   },
-};
+}
 
 const weightMap: Record<TypographyWeight, number> = {
   regular: 400,
   medium: 500,
   semibold: 600,
-};
+}
 
 const Text = styled.div<{
   lineHeight: string;
@@ -76,22 +76,23 @@ const RichText = styled.div<{
 `;
 
 const Typography = ({ children, type, weight, size, italic }: TypographyProps) => {
-  const fontWeight = weightMap[weight];
-  const fontFamily = type === 'heading' ? 'Poppins, sans-serif' : 'Inter, sans-serif';
+  const fontWeight = weightMap[weight]
+  const fontFamily = type === 'heading' ? 'Poppins, sans-serif' : 'Inter, sans-serif'
 
   if (type === 'rtf') {
     return (
       <RichText
+        as={size}
         fontWeight={fontWeight}
         fontFamily={fontFamily}
-        as={size}
+        italic={italic}
       >
         {children}
       </RichText>
-    );
+    )
   }
 
-  const { fontSize, lineHeight } = sizeMap[type][size];
+  const { fontSize, lineHeight } = sizeMap[type][size]
 
   return (
     <Text
@@ -103,7 +104,7 @@ const Typography = ({ children, type, weight, size, italic }: TypographyProps) =
       italic={italic}>
       {children}
     </Text>
-  );
-};
+  )
+}
 
-export default Typography;
+export default Typography
